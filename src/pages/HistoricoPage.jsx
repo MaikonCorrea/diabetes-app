@@ -1,13 +1,13 @@
 import Nav from "../components/Nav";
 import styles from "../styles/DashboardPage.module.css";
 
-export default function DashboardPage() {
+export default function HistoricoPage() {
   return (
     <div className={styles.layout}>
       <Nav />
       <main className={styles.content}>
-        <h1 className={styles.welcome}>Bem-vindo ao DiabetesApp</h1>
-        <p>Escolha no menu lateral o que deseja registrar ou consultar.</p>
+        <h1>Histórico</h1>
+        <p>Aqui futuramente mostraremos todos os registros (glicemia + insulina).</p>
       </main>
     </div>
   );
