@@ -1,15 +1,33 @@
+/* Reset simples + global */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-  --background: linear-gradient(135deg, #d0eaff, #e6f7ff);
-  --color: #333;
+html, body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #0077cc;
 }
 
 button {
   cursor: pointer;
+  border: none;
+  background: #0077cc;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #005fa3;
 }

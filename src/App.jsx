@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
-import DashboardPage from "./pages/DashboardPage";
-import GlicemiaPage from "./pages/GlicemiaPage";
-import InsulinaPage from "./pages/InsulinaPage";
+import RegisterPage from "./pages/RegisterPage";
+import HomePage from "./pages/HomePage";
+import RegistrosPage from "./pages/RegistrosPage";
 import HistoricoPage from "./pages/HistoricoPage";
 import DicasPage from "./pages/DicasPage";
 import "./styles/global.css";
@@ -12,11 +12,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginPage />} />
-        <Route path="/dashboard" element={<DashboardPage />} />
-        <Route path="/dashboard/glicemia" element={<GlicemiaPage />} />
-        <Route path="/dashboard/insulina" element={<InsulinaPage />} />
-        <Route path="/dashboard/historico" element={<HistoricoPage />} />
-        <Route path="/dashboard/dicas" element={<DicasPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/registros" element={<RegistrosPage />} />
+        <Route path="/historico" element={<HistoricoPage />} />
+        <Route path="/dicas" element={<DicasPage />} />
       </Routes>
     </BrowserRouter>
   );

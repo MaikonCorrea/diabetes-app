@@ -1,16 +1,16 @@
-import Nav from "../components/Nav";
-import styles from "../styles/DashboardPage.module.css";
+import Header from "../components/Header";
+import styles from "../styles/Layout.module.css";
 
 export default function DicasPage() {
   return (
-    <div className={styles.layout}>
-      <Nav />
+    <div>
+      <Header />
       <main className={styles.content}>
-        <h1>Dicas de Saúde</h1>
+        <h2>Dicas</h2>
         <ul>
-          <li>Se a glicemia estiver baixa, consuma uma fonte de açúcar rápida (ex: suco de laranja).</li>
-          <li>Se estiver alta, beba água e siga o plano do seu médico.</li>
-          <li>Mantenha um diário regular de medições.</li>
+          <li>Se a glicemia estiver baixa, consuma açúcar rápido.</li>
+          <li>Se estiver alta, beba água e siga o plano médico.</li>
+          <li>Não esqueça de registrar sempre as medições.</li>
         </ul>
       </main>
     </div>

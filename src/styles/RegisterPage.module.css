@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  background: linear-gradient(135deg, #f3e5f5, #e1bee7);
 }
 
 .card {
@@ -18,7 +18,7 @@
 
 .title {
   margin-bottom: 1.5rem;
-  color: #0077cc;
+  color: #6a1b9a;
 }
 
 .form {

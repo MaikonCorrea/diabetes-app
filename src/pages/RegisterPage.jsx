@@ -1,22 +1,30 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import styles from "../styles/LoginPage.module.css";
+import styles from "../styles/RegisterPage.module.css";
 
-export default function LoginPage() {
+export default function RegisterPage() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
 
-  const handleLogin = (e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
-    if (email && password) navigate("/home");
+    if (name && email && password) navigate("/home");
   };
 
   return (
     <div className={styles.container}>
       <div className={styles.card}>
-        <h1 className={styles.title}>Entrar</h1>
-        <form onSubmit={handleLogin} className={styles.form}>
+        <h1 className={styles.title}>Cadastro</h1>
+        <form onSubmit={handleRegister} className={styles.form}>
+          <input
+            type="text"
+            placeholder="Nome"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
           <input
             type="email"
             placeholder="E-mail"
@@ -31,10 +39,10 @@ export default function LoginPage() {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <button type="submit">Login</button>
+          <button type="submit">Cadastrar</button>
         </form>
         <p>
-          Não tem conta? <Link to="/register">Cadastre-se</Link>
+          Já tem conta? <Link to="/">Login</Link>
         </p>
       </div>
     </div>

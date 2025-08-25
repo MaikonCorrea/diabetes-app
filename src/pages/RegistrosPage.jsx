@@ -1,27 +1,38 @@
 import { useState } from "react";
-import Nav from "../components/Nav";
+import Header from "../components/Header";
+import styles from "../styles/Layout.module.css";
 import formStyles from "../styles/Forms.module.css";
-import styles from "../styles/DashboardPage.module.css";
 
-export default function InsulinaPage() {
+export default function RegistrosPage() {
+  const [glicemia, setGlicemia] = useState("");
+  const [insulina, setInsulina] = useState("");
   const [tipo, setTipo] = useState("rápida");
-  const [dose, setDose] = useState("");
-  const [hora, setHora] = useState("");
+  const [hora, setHora] = useState(() => {
+    const now = new Date();
+    return now.toTimeString().slice(0, 5);
+  });
   const [registros, setRegistros] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setRegistros([...registros, { tipo, dose, hora }]);
-    setDose("");
-    setHora("");
+    setRegistros([...registros, { glicemia, insulina, tipo, hora }]);
+    setGlicemia("");
+    setInsulina("");
   };
 
   return (
-    <div className={styles.layout}>
-      <Nav />
+    <div>
+      <Header />
       <main className={styles.content}>
-        <h1>Registrar Insulina</h1>
+        <h2>Registrar Glicemia + Insulina</h2>
         <form onSubmit={handleSubmit} className={formStyles.form}>
+          <input
+            type="number"
+            placeholder="Glicemia (mg/dL)"
+            value={glicemia}
+            onChange={(e) => setGlicemia(e.target.value)}
+            required
+          />
           <select value={tipo} onChange={(e) => setTipo(e.target.value)}>
             <option value="rápida">Insulina Rápida</option>
             <option value="lenta">Insulina Lenta</option>
@@ -29,8 +40,8 @@ export default function InsulinaPage() {
           <input
             type="number"
             placeholder="Dose (unidades)"
-            value={dose}
-            onChange={(e) => setDose(e.target.value)}
+            value={insulina}
+            onChange={(e) => setInsulina(e.target.value)}
             required
           />
           <input
@@ -42,11 +53,11 @@ export default function InsulinaPage() {
           <button type="submit">Salvar</button>
         </form>
 
-        <h2>Registros</h2>
+        <h3>Últimos registros</h3>
         <ul>
           {registros.map((r, i) => (
             <li key={i}>
-              {r.tipo} - {r.dose}U às {r.hora}
+              {r.hora} - Glicemia {r.glicemia} mg/dL, {r.tipo} {r.insulina}U
             </li>
           ))}
         </ul>
