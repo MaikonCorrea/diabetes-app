@@ -9,9 +9,7 @@ export default function LoginPage() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (email && password) {
-      navigate("/dashboard");
-    }
+    if (email && password) navigate("/dashboard");
   };
 
   return (
