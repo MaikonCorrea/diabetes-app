@@ -35,6 +35,7 @@ export default function LoginPage() {
         </form>
         <p>
           Não tem conta? <Link to="/register">Cadastre-se</Link>
+          registro? <Link to="/registros">Registros</Link>
         </p>
       </div>
     </div>
