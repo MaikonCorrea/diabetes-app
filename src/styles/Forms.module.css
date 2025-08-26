@@ -6,13 +6,19 @@
   margin-top: 1.5rem;
 }
 
-.form input, .form select {
+.form input,
+.form select {
   padding: 0.8rem;
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 1rem;
+  width: 100%;   /* garante que inputs usem toda a largura disponível */
+  box-sizing: border-box;
 }
 
 .form button {
-  align-self: flex-start;
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  align-self: center; /* centraliza só o botão */
 }

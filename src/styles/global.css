@@ -1,14 +1,15 @@
 /* Reset simples + global */
 * {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: #f8f9fa;
   color: #333;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
   height: 100%;
 }
 
@@ -17,7 +18,7 @@ a {
   color: #0077cc;
 }
 
-button {
+/* button {
   cursor: pointer;
   border: none;
   background: #0077cc;
@@ -30,4 +31,4 @@ button {
 
 button:hover {
   background: #005fa3;
-}
+} */
